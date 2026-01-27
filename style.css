@@ -327,17 +327,14 @@ footer {
 
 /* 成功訊息動畫 */
 #successMsg {
-  margin-top: 25px;
-  font-size: 16px;
-  opacity: 0;
-  transform: translateY(10px);
-  transition: 0.4s ease;
+  display: none;
+  margin-top: 20px;
+  color: #38bdf8;
+  font-weight: bold;
 }
 
 #successMsg.show {
-  opacity: 1;
-  transform: translateY(0);
-  color: #22d3ee;
+  display: block;
 }
 
 
