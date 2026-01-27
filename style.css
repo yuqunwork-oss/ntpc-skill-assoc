@@ -150,3 +150,40 @@ footer {
   font-size: 14px;
 }
 
+/*-報名諮詢--*/
+.enroll-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 20px;
+  background: linear-gradient(to right, #0f172a, #1e293b);
+}
+
+.enroll-form {
+  background-color: #1e293b;
+  padding: 40px;
+  border-radius: 12px;
+  width: 420px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+
+.enroll-form label {
+  font-size: 14px;
+}
+
+.enroll-form input,
+.enroll-form select,
+.enroll-form textarea {
+  padding: 12px;
+  border-radius: 6px;
+  border: none;
+  font-size: 14px;
+}
+
+.enroll-form textarea {
+  resize: none;
+  height: 80px;
+}
