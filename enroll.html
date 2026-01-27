@@ -26,7 +26,17 @@
   <form id="enrollForm">
     <input type="text" name="name" placeholder="學生姓名" required>
     <input type="text" name="phone" placeholder="家長電話" required>
-    <input type="text" name="course" placeholder="報名課程" required>
+    <select name="course" required>
+    <option value="">請選擇課程</option>
+    <option value="拼豆手作">拼豆手作</option>
+    <option value="糖霜餅乾">糖霜餅乾</option>
+    <option value="縫紉手作">縫紉手作</option>
+    <option value="黏土手作">黏土手作</option>
+    <option value="兒童美術">兒童美術</option>
+    <option value="桌遊課程">桌遊課程</option>
+    <option value="寶可夢TCG卡牌班">寶可夢TCG卡牌班</option>
+</select>
+
     <textarea name="note" placeholder="備註"></textarea>
 
     <button type="submit" class="cta-btn">送出報名</button>
