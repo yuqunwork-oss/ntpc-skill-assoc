@@ -125,3 +125,28 @@ footer {
   color: #38bdf8;
 }
 
+/* 報名頁 */
+
+.enroll-section {
+  display: flex;
+  justify-content: center;
+  padding: 80px 20px;
+  background-color: #111827;
+}
+
+.enroll-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 400px;
+}
+
+.enroll-form input,
+.enroll-form select,
+.enroll-form textarea {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  font-size: 14px;
+}
+
