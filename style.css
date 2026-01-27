@@ -245,5 +245,99 @@ footer {
   transform: translateY(-4px);
   box-shadow: 0 15px 35px rgba(56,189,248,0.6);
 }
+/* ===== 報名卡片升級版 ===== */
+
+.enroll-section {
+  min-height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+  background: radial-gradient(circle at top, #1e293b, #0f172a);
+}
+
+.enroll-card {
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(15px);
+  padding: 60px 50px;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.enroll-card h2 {
+  font-size: 34px;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+}
+
+.enroll-card p {
+  color: #cbd5e1;
+  margin-bottom: 35px;
+}
+
+/* 表單排版 */
+#enrollForm {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+#enrollForm input,
+#enrollForm textarea {
+  padding: 14px;
+  border-radius: 10px;
+  border: none;
+  font-size: 15px;
+  outline: none;
+  background: #1e293b;
+  color: white;
+  border: 1px solid rgba(255,255,255,0.1);
+  transition: 0.3s;
+}
+
+#enrollForm input:focus,
+#enrollForm textarea:focus {
+  border: 1px solid #38bdf8;
+  box-shadow: 0 0 10px rgba(56,189,248,0.5);
+}
+
+/* 升級版按鈕 */
+.cta-btn {
+  margin-top: 15px;
+  padding: 16px;
+  border-radius: 50px;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  background: linear-gradient(135deg, #00e5ff, #00bcd4);
+  color: #0f172a;
+  transition: 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0,188,212,0.4);
+}
+
+.cta-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(0,188,212,0.6);
+}
+
+/* 成功訊息動畫 */
+#successMsg {
+  margin-top: 25px;
+  font-size: 16px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: 0.4s ease;
+}
+
+#successMsg.show {
+  opacity: 1;
+  transform: translateY(0);
+  color: #22d3ee;
+}
 
 
