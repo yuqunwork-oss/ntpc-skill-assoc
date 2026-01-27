@@ -32,9 +32,9 @@
     <button type="submit" class="cta-btn">送出報名</button>
   </form>
 
-  <p id="successMsg" style="display:none; margin-top:20px; color:#38bdf8;">
-    ✔ 已成功送出，我們會盡快與您聯絡！
-  </p>
+ <p id="successMsg">
+  ✔ 已成功送出，我們會盡快與您聯絡！
+</p>
 </div>
 
 </section>
@@ -66,7 +66,7 @@
       body: JSON.stringify(data)
     })
     .then(() => {
-      successMsg.style.display = "block";
+      successMsg.classList.add("show");
       form.reset();
     })
     .catch(() => {
