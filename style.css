@@ -353,5 +353,15 @@ footer {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
 }
+/*下拉式選單*/
+.enroll-card select {
+  padding: 12px;
+  border-radius: 6px;
+  border: none;
+  font-size: 14px;
+  width: 100%;
+  margin-bottom: 15px;
+  background-color: #f8fafc;
+}
 
 
