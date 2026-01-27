@@ -96,3 +96,32 @@ footer {
   background-color: #0f172a;
   font-size: 14px;
 }
+/* 課程頁 */
+
+.course-list {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 80px 20px;
+  flex-wrap: wrap;
+  background-color: #0f172a;
+}
+
+.course-card {
+  background-color: #1e293b;
+  padding: 30px;
+  border-radius: 10px;
+  width: 280px;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0,0,0,0.4);
+  transition: 0.3s;
+}
+
+.course-card:hover {
+  transform: translateY(-5px);
+}
+
+.course-card h2 {
+  color: #38bdf8;
+}
+
