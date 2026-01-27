@@ -19,19 +19,23 @@
 </nav>
 
 <section class="enroll-section">
+<div class="enroll-card">
+  <h2>立即預約體驗課程</h2>
+  <p>名額有限，立即填寫資料為孩子預留學習名額</p>
 
-  <div class="enroll-card">
-    <h2>立即預約體驗課程</h2>
-    <p>名額有限，立即填寫資料為孩子預留學習名額</p>
+  <form id="enrollForm">
+    <input type="text" name="name" placeholder="學生姓名" required>
+    <input type="text" name="phone" placeholder="家長電話" required>
+    <input type="text" name="course" placeholder="報名課程" required>
+    <textarea name="note" placeholder="備註"></textarea>
 
-   <a 
-    href="https://docs.google.com/forms/d/e/1FAIpQLSevOD8wwvE3pcZXvgws5veoQIcbGcH1mJzUFBy2jIuA6t7rYw/viewform"
-    target="_blank"
-    class="cta-btn">
-    前往報名表單
-  </a>
+    <button type="submit" class="cta-btn">送出報名</button>
+  </form>
 
-  </div>
+  <p id="successMsg" style="display:none; margin-top:20px; color:#38bdf8;">
+    ✔ 已成功送出，我們會盡快與您聯絡！
+  </p>
+</div>
 
 </section>
 
@@ -41,6 +45,35 @@
 <footer>
   <p>© 2026 NTPC Skill Assoc. All Rights Reserved.</p>
 </footer>
+<script>
+  const scriptURL = "https://script.google.com/macros/s/AKfycbzCC5iT4rAKgi6le42kSecp38KMWejuwN122MXycYksDQJWJdGaX5DrA5aR95HsrSBVDQ/exec";
+
+  const form = document.getElementById("enrollForm");
+  const successMsg = document.getElementById("successMsg");
+
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData.entries());
+
+    fetch(scriptURL, {
+      method: "POST",
+      mode: "no-cors",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(data)
+    })
+    .then(() => {
+      successMsg.style.display = "block";
+      form.reset();
+    })
+    .catch(() => {
+      alert("發生錯誤，請稍後再試");
+    });
+  });
+</script>
 
 </body>
 </html>
