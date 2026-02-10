@@ -3,14 +3,24 @@
    保留原本 class 命名，可直接套用
 ========================= */
 :root{
-  --bg: #f6f3ee;          /* 米白底 */
-  --surface: #ffffff;     /* 卡片白 */
-  --text: #2b2b2b;        /* 主字 */
-  --muted: #6b6b6b;       /* 次字 */
-  --line: #e6dfd4;        /* 細邊框 */
-  --accent: #8b6b4a;      /* 奶茶棕 */
-  --accent-soft: #cbb79c; /* 淡棕 */
-  --shadow: 0 14px 40px rgba(38, 28, 20, 0.08);
+  /* 你圖的三色主角 */
+  --moss: #455D5A;      /* 深墨綠 */
+  --cream: #DCCBB9;     /* 奶油米 */
+  --sand: #E1C090;      /* 沙金 */
+
+  /* 全站基底（更不淡、更有層次） */
+  --bg: #F2ECE3;        /* 米白底（比純白更溫） */
+  --surface: #FBF8F2;   /* 卡片底（乾淨但不刺眼） */
+  --text: #1F2423;      /* 深字（提高可讀性） */
+  --muted: #49514F;     /* 次字（比你原本深） */
+  --line: #CDBEAE;      /* 邊框（更可見） */
+
+  /* 強調色 */
+  --accent: var(--moss);
+  --accent-soft: #7C908C;
+
+  /* 陰影（更有存在感） */
+  --shadow: 0 18px 50px rgba(31, 36, 35, 0.14);
 
   --radius: 14px;
   --max: 1100px;
@@ -413,4 +423,50 @@ footer{
     gap: 10px;
   }
   .hero h1{ font-size: 32px; }
+}
+
+/* 讓整體更像你圖：深一點的邊框、陰影、導覽列 */
+nav{
+  background: rgba(242,236,227,0.92);
+  border-bottom: 1px solid var(--line);
+}
+
+nav a{
+  color: var(--text);
+}
+
+nav a:hover{
+  background: rgba(69,93,90,0.12);  /* moss 淡底 */
+  color: var(--accent);
+}
+
+/* Hero 更有層次：用 moss 做深淺漸層 */
+.hero{
+  background: linear-gradient(180deg, rgba(69,93,90,0.14), rgba(242,236,227,0.0));
+}
+
+/* 卡片更有框感 */
+.feature,
+.course-card,
+.enroll-card,
+.contact-card{
+  border-color: var(--line);
+  box-shadow: var(--shadow);
+}
+
+/* 按鈕更像無印但不淡 */
+.cta-btn.is-primary{
+  background: var(--moss);
+  border-color: var(--moss);
+  color: #fff;
+}
+
+.cta-btn.is-primary:hover{
+  box-shadow: 0 18px 46px rgba(69,93,90,0.28);
+}
+
+/* 一般按鈕也更有存在感 */
+.cta-btn{
+  border-color: var(--line);
+  background: var(--surface);
 }
