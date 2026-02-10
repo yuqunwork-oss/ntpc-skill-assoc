@@ -1,443 +1,416 @@
-/* 全域設定 */
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #0f172a;
-  color: white;
+/* =========================
+   MUJI Light Theme (NTPC 補習班)
+   保留原本 class 命名，可直接套用
+========================= */
+:root{
+  --bg: #f6f3ee;          /* 米白底 */
+  --surface: #ffffff;     /* 卡片白 */
+  --text: #2b2b2b;        /* 主字 */
+  --muted: #6b6b6b;       /* 次字 */
+  --line: #e6dfd4;        /* 細邊框 */
+  --accent: #8b6b4a;      /* 奶茶棕 */
+  --accent-soft: #cbb79c; /* 淡棕 */
+  --shadow: 0 14px 40px rgba(38, 28, 20, 0.08);
+
+  --radius: 14px;
+  --max: 1100px;
 }
 
-/* 導覽列 */
-nav {
-  display: flex;
+*{ box-sizing:border-box; }
+
+html{ scroll-behavior:smooth; }
+
+body{
+  margin:0;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+               "Noto Sans TC", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.75;
+  letter-spacing: .2px;
+}
+
+img{ max-width:100%; display:block; }
+
+a{ color: var(--accent); text-decoration:none; }
+a:hover{ text-decoration:underline; }
+
+/* =========================
+   Nav（保留 logo / ul / a）
+========================= */
+nav{
+  position: sticky;
+  top:0;
+  z-index: 50;
+  display:flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 20px 50px;
-  background-color: #111827;
+  align-items:center;
+  padding: 14px 22px;
+  background: rgba(246,243,238,0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
 }
 
-nav .logo {
-  font-size: 20px;
-  font-weight: bold;
-  color: #38bdf8;
-}
-
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 30px;
-  margin: 0;
-  padding: 0;
-}
-
-nav a {
-  text-decoration: none;
-  color: white;
-  transition: 0.3s;
-}
-
-nav a:hover {
-  color: #38bdf8;
-}
-
-/* Hero 區 */
-.hero {
-  text-align: center;
-  padding: 120px 20px;
-  background: linear-gradient(to right, #0f172a, #1e293b);
-}
-
-.hero h1 {
-  font-size: 42px;
-  margin-bottom: 20px;
-}
-
-.hero p {
+nav .logo{
   font-size: 18px;
-  margin-bottom: 30px;
+  font-weight: 800;
+  letter-spacing: .6px;
+  color: var(--text);
 }
 
-.cta-btn {
-  display: inline-block;
-  padding: 12px 25px;
-  background-color: #38bdf8;
-  color: black;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: 0.3s;
-}
-
-.cta-btn:hover {
-  background-color: white;
-}
-
-/* 特色區塊 */
-.features {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  padding: 80px 20px;
-  background-color: #111827;
-}
-
-.feature {
-  max-width: 300px;
-  text-align: center;
-}
-
-.feature h2 {
-  color: #38bdf8;
-}
-
-/* 底部 */
-footer {
-  text-align: center;
-  padding: 20px;
-  background-color: #0f172a;
-  font-size: 14px;
-}
-/* 課程頁 */
-
-.course-list {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  padding: 80px 20px;
+nav ul{
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:flex;
+  gap: 14px;
   flex-wrap: wrap;
-  background-color: #0f172a;
+  justify-content: flex-end;
 }
 
-.course-card {
-  background-color: #1e293b;
-  padding: 30px;
-  border-radius: 10px;
-  width: 280px;
-  text-align: center;
-  box-shadow: 0 0 20px rgba(0,0,0,0.4);
-  transition: 0.3s;
-}
-
-.course-card:hover {
-  transform: translateY(-5px);
-}
-
-.course-card h2 {
-  color: #38bdf8;
-}
-
-/* 報名頁 */
-
-.enroll-section {
-  display: flex;
-  justify-content: center;
-  padding: 80px 20px;
-  background-color: #111827;
-}
-
-.enroll-form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  width: 400px;
-}
-
-.enroll-form input,
-.enroll-form select,
-.enroll-form textarea {
-  padding: 10px;
-  border-radius: 5px;
-  border: none;
+nav a{
+  color: var(--text);
+  font-weight: 700;
   font-size: 14px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  transition: background .2s ease, color .2s ease;
 }
 
-/*-報名諮詢--*/
-.enroll-section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 100px 20px;
-  background: linear-gradient(to right, #0f172a, #1e293b);
+nav a:hover{
+  background: rgba(139,107,74,0.10);
+  color: var(--accent);
+  text-decoration:none;
 }
 
-.enroll-form {
-  background-color: #1e293b;
-  padding: 40px;
-  border-radius: 12px;
-  width: 420px;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+/* =========================
+   Hero（原 .hero 保留）
+========================= */
+.hero{
+  text-align:center;
+  padding: 84px 18px 54px;
+  background: radial-gradient(circle at top, #ffffff, #f6f3ee);
+  border-bottom: 1px solid var(--line);
 }
 
-.enroll-form label {
-  font-size: 14px;
-}
-
-.enroll-form input,
-.enroll-form select,
-.enroll-form textarea {
-  padding: 12px;
-  border-radius: 6px;
-  border: none;
-  font-size: 14px;
-}
-
-.enroll-form textarea {
-  resize: none;
-  height: 80px;
-}
-/* ===== 報名頁面 ===== */
-
-.enroll-section {
-  min-height: 85vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 100px 20px;
-  background: linear-gradient(to right, #0f172a, #1e293b);
-}
-
-.enroll-card {
-  background: rgba(255,255,255,0.05);
-  backdrop-filter: blur(12px);
-  padding: 60px 50px;
-  border-radius: 20px;
-  text-align: center;
-  max-width: 650px;
-  width: 100%;
-  box-shadow: 0 25px 50px rgba(0,0,0,0.6);
-  border: 1px solid rgba(255,255,255,0.08);
-  transition: 0.3s ease;
-}
-
-.enroll-card:hover {
-  transform: translateY(-5px);
-}
-
-.enroll-card h2 {
-  font-size: 34px;
-  margin-bottom: 20px;
-  color: #ffffff;
-}
-
-.enroll-card p {
-  font-size: 16px;
-  color: #cbd5e1;
-  margin-bottom: 40px;
-  line-height: 1.6;
-}
-
-.cta-btn {
-  display: inline-block;
-  padding: 16px 45px;
-  background: linear-gradient(135deg, #38bdf8, #0ea5e9);
-  color: #0f172a;
-  text-decoration: none;
-  font-weight: bold;
-  border-radius: 50px;
-  font-size: 16px;
-  transition: 0.3s ease;
-  box-shadow: 0 10px 30px rgba(56,189,248,0.4);
-}
-
-.cta-btn:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 15px 35px rgba(56,189,248,0.6);
-}
-/* ===== 報名卡片升級版 ===== */
-
-.enroll-section {
-  min-height: 90vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 60px 20px;
-  background: radial-gradient(circle at top, #1e293b, #0f172a);
-}
-
-.enroll-card {
-  background: rgba(255,255,255,0.05);
-  backdrop-filter: blur(15px);
-  padding: 60px 50px;
-  border-radius: 20px;
-  width: 100%;
-  max-width: 600px;
-  text-align: center;
-  box-shadow: 0 30px 60px rgba(0,0,0,0.6);
-  border: 1px solid rgba(255,255,255,0.1);
-}
-
-.enroll-card h2 {
-  font-size: 34px;
-  margin-bottom: 15px;
+.hero h1{
+  font-size: 40px;
+  margin: 0 0 14px;
   letter-spacing: 1px;
 }
 
-.enroll-card p {
-  color: #cbd5e1;
-  margin-bottom: 35px;
-}
-
-/* 表單排版 */
-#enrollForm {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-}
-
-#enrollForm input,
-#enrollForm textarea {
-  padding: 14px;
-  border-radius: 10px;
-  border: none;
-  font-size: 15px;
-  outline: none;
-  background: #1e293b;
-  color: white;
-  border: 1px solid rgba(255,255,255,0.1);
-  transition: 0.3s;
-}
-
-#enrollForm input:focus,
-#enrollForm textarea:focus {
-  border: 1px solid #38bdf8;
-  box-shadow: 0 0 10px rgba(56,189,248,0.5);
-}
-
-/* 升級版按鈕 */
-.cta-btn {
-  margin-top: 15px;
-  padding: 16px;
-  border-radius: 50px;
-  border: none;
+.hero p{
   font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
-  background: linear-gradient(135deg, #00e5ff, #00bcd4);
-  color: #0f172a;
-  transition: 0.3s ease;
-  box-shadow: 0 10px 30px rgba(0,188,212,0.4);
+  margin: 0 auto 22px;
+  color: var(--muted);
+  max-width: 840px;
 }
 
-.cta-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 15px 40px rgba(0,188,212,0.6);
-}
-
-/* 成功訊息動畫 */
-#successMsg {
-  display: none;
-  margin-top: 20px;
-  color: #38bdf8;
-  font-weight: bold;
-}
-
-#successMsg.show {
-  display: block;
-}
-.success-msg {
-  display: none;
-  margin-top: 20px;
-  color: #00e5ff;
-  font-weight: bold;
-  font-size: 16px;
-  animation: fadeIn 0.6s ease;
-}
-
-.success-msg.show {
-  display: block;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-/*下拉式選單*/
-
-
-.enroll-card input,
-.enroll-card textarea,
-.enroll-card select {
-  width: 100%;
-  padding: 16px;
-  margin-bottom: 20px;
+.cta-btn{
+  display:inline-block;
+  padding: 12px 18px;
   border-radius: 12px;
-  border: 1px solid rgba(255,255,255,0.1);
-  background-color: #0f172a;   /* 深黑 */
-  color: white;
-  font-size: 15px;
-  outline: none;
-  transition: 0.3s ease;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--text);
+  font-weight: 800;
+  transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
 }
 
-/* focus 效果 */
-.enroll-card input:focus,
-.enroll-card textarea:focus,
-.enroll-card select:focus {
-  border: 1px solid #38bdf8;
-  box-shadow: 0 0 15px rgba(56,189,248,0.4);
+.cta-btn:hover{
+  transform: translateY(-1px);
+  border-color: var(--accent-soft);
+  box-shadow: 0 14px 34px rgba(38, 28, 20, 0.10);
+  text-decoration:none;
 }
 
-/* 下拉箭頭自訂 */
-.enroll-card select {
-  appearance: none;
-  background-color: #0f172a;
-  background-image: url("data:image/svg+xml;utf8,<svg fill='%2338bdf8' height='20' viewBox='0 0 24 24' width='20' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
-  background-repeat: no-repeat;
-  background-position: right 18px center;
-  background-size: 18px;
-  cursor: pointer;
+/* 你若想主按鈕更像無印：加這個 class 到按鈕上（可選）
+   <a class="cta-btn is-primary" ...>
+*/
+.cta-btn.is-primary{
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+.cta-btn.is-primary:hover{
+  box-shadow: 0 16px 38px rgba(139,107,74,0.22);
 }
 
-/* 下拉選單展開時 */
-.enroll-card select option {
-  background-color: #0f172a;
-  color: white;
+/* =========================
+   Features（原 .features / .feature）
+========================= */
+.features{
+  display:flex;
+  justify-content:center;
+  gap: 18px;
+  padding: 54px 18px;
+  flex-wrap: wrap;
+  max-width: var(--max);
+  margin: 0 auto;
 }
 
-/* ===== 聯絡我們頁面 ===== */
+.feature{
+  width: min(340px, 100%);
+  text-align:center;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 22px 18px;
+}
 
-.contact-section {
+.feature h2{
+  margin: 0 0 10px;
+  font-size: 18px;
+  color: var(--text);
+  letter-spacing: .6px;
+}
+
+.feature p{
+  margin: 0;
+  color: var(--muted);
+}
+
+/* =========================
+   Courses（原 .course-list / .course-card）
+========================= */
+.course-list{
+  display:flex;
+  justify-content:center;
+  gap: 18px;
+  padding: 54px 18px;
+  flex-wrap: wrap;
+  max-width: var(--max);
+  margin: 0 auto;
+}
+
+.course-card{
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  width: min(320px, 100%);
+  text-align:center;
+  box-shadow: var(--shadow);
+  padding: 22px 18px;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.course-card:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 16px 44px rgba(38, 28, 20, 0.10);
+}
+
+.course-card h2{
+  margin: 0 0 10px;
+  font-size: 18px;
+  color: var(--text);
+}
+
+.course-card p{
+  margin: 0;
+  color: var(--muted);
+}
+
+/* =========================
+   Enroll（報名/諮詢）
+   保留 .enroll-section / .enroll-form / .enroll-card / #enrollForm
+========================= */
+.enroll-section{
   min-height: 80vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 80px 20px;
-  background: linear-gradient(to right, #0f172a, #1e293b);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding: 60px 18px;
+  background: linear-gradient(180deg, #f6f3ee, #ffffff);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
 }
 
-.contact-card {
-  background: rgba(255,255,255,0.05);
-  backdrop-filter: blur(10px);
-  padding: 60px 40px;
+/* 若你的頁面用 .enroll-card 當外框 */
+.enroll-card{
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  width: 100%;
+  max-width: 680px;
+  text-align: center;
+  box-shadow: var(--shadow);
+  padding: 38px 22px;
+}
+
+.enroll-card h2{
+  margin: 0 0 10px;
+  font-size: 28px;
+  letter-spacing: 1px;
+  color: var(--text);
+}
+
+.enroll-card p{
+  margin: 0 auto 26px;
+  color: var(--muted);
+  max-width: 560px;
+}
+
+/* 若你的頁面用 .enroll-form */
+.enroll-form{
+  width: 100%;
+  max-width: 520px;
+  margin: 0 auto;
+  display:flex;
+  flex-direction:column;
+  gap: 12px;
+  text-align: left;
+}
+
+/* 兼容你用 #enrollForm 的情況 */
+#enrollForm{
+  width: 100%;
+  max-width: 520px;
+  margin: 0 auto;
+  display:flex;
+  flex-direction:column;
+  gap: 12px;
+  text-align: left;
+}
+
+.enroll-form label,
+#enrollForm label{
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--text);
+}
+
+.enroll-form input,
+.enroll-form select,
+.enroll-form textarea,
+.enroll-card input,
+.enroll-card select,
+.enroll-card textarea,
+#enrollForm input,
+#enrollForm select,
+#enrollForm textarea{
+  width: 100%;
+  padding: 12px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: #fff;
+  color: var(--text);
+  outline: none;
+  font-size: 14px;
+  transition: border-color .15s ease, box-shadow .15s ease;
+}
+
+.enroll-form textarea,
+.enroll-card textarea,
+#enrollForm textarea{
+  min-height: 96px;
+  resize: vertical;
+}
+
+.enroll-form input:focus,
+.enroll-form select:focus,
+.enroll-form textarea:focus,
+.enroll-card input:focus,
+.enroll-card select:focus,
+.enroll-card textarea:focus,
+#enrollForm input:focus,
+#enrollForm select:focus,
+#enrollForm textarea:focus{
+  border-color: var(--accent-soft);
+  box-shadow: 0 0 0 3px rgba(203,183,156,0.35);
+}
+
+/* 下拉選單（保留簡潔，不做炫箭頭） */
+.enroll-card select option,
+.enroll-form select option,
+#enrollForm select option{
+  background: #fff;
+  color: var(--text);
+}
+
+/* 成功訊息 */
+#successMsg,
+.success-msg{
+  display: none;
+  margin-top: 14px;
+  color: var(--accent);
+  font-weight: 800;
+}
+
+#successMsg.show,
+.success-msg.show{
+  display: block;
+}
+
+/* =========================
+   Contact（聯絡我們）
+========================= */
+.contact-section{
+  min-height: 70vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding: 60px 18px;
+  background: var(--bg);
+}
+
+.contact-card{
+  background: var(--surface);
+  border: 1px solid var(--line);
   border-radius: 20px;
   text-align: center;
-  max-width: 600px;
+  max-width: 720px;
   width: 100%;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-  border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: var(--shadow);
+  padding: 34px 22px;
 }
 
-.contact-card h2 {
-  font-size: 32px;
-  margin-bottom: 20px;
+.contact-card h2{
+  font-size: 26px;
+  margin: 0 0 14px;
+  letter-spacing: 1px;
 }
 
-.contact-info p {
-  margin: 15px 0;
-  font-size: 16px;
+.contact-info p{
+  margin: 10px 0;
+  color: var(--muted);
+  font-size: 15px;
 }
-.map {
-  margin-top: 30px;
-  border-radius: 15px;
+
+/* Map */
+.map{
+  margin-top: 18px;
+  border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+  border: 1px solid var(--line);
+  box-shadow: 0 12px 28px rgba(38,28,20,0.10);
 }
-
-.map iframe {
+.map iframe{
   width: 100%;
   height: 350px;
   border: none;
 }
 
+/* =========================
+   Footer
+========================= */
+footer{
+  text-align:center;
+  padding: 20px 18px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 14px;
+  background: rgba(246,243,238,0.75);
+}
+
+/* =========================
+   Responsive
+========================= */
+@media (max-width: 860px){
+  nav{
+    padding: 12px 14px;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .hero h1{ font-size: 32px; }
+}
